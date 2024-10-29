@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Always Open Zoom in Browser",
+    "version": "1.0",
+
+    "description": "A stupidly simple extension that skips the screen trying to open zoom and joins the meeting in your browser.",
+    
+    "icons": {
+        "48": "icons/ic_48.png"
+    },
+
+    "content_scripts": [
+        {
+          "matches": ["https://*.zoom.us/j/*"],
+          "js": ["join-pwa.js"],
+          "run_at": "document_start",
+          "world": "ISOLATED"
+        }
+    ],
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "always-open-zoom-in-browser@britto.tech"
+        }
+    }
+}
